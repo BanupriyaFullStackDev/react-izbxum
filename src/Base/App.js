@@ -1,21 +1,12 @@
-import React from "react";
-import Header from "../Header/Header";
+import React, { useState, useEffect, useContext } from "react";
+import HeadMaster from "../UseContext/HeadMaster";
 import "./style.css";
-
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { name: "raja" };
-  }
-  render() {
-    return (
-      <div className="container">
-        <Header />
-        <button className="btn btn-sm btn-danger">{this.state.name}</button>
-        <Header />
-      </div>
-    );
-  }
+export const StudentContext = React.createContext("");
+function App() {
+  return (
+    <StudentContext.Provider value={"Banupriya"}>
+      <HeadMaster />
+    </StudentContext.Provider>
+  );
 }
-
 export default App;
